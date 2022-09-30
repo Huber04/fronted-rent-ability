@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/error.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -34,19 +35,19 @@
                                 <form>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Correo electronico</label>
-                                        <input type="email" id="email" class="form-control" required>
+                                        <input type="email" class="form-control" name="email" id="email" required/>
                                     </div>
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Contraseña</label>
-                                        <input type="password" id="password" class="form-control" required>
+                                        <input type="password" class="form-control" name="password" id="password" required/>
                                     </div>
-                                    
                                     <div class="mb-3">
-                                        <button type="submit" class="btn btn-outline-dark" onclick="login();">Iniciar sesion</button>
+                                        <button type="submit" class="btn btn-outline-dark" id="login">Iniciar sesion</button>
                                     </div>
                                     <div class="mb-3">
                                         <a href="/registrarse">No tienes cuenta, crea una</a>
                                     </div>
+                                    <div id="message-error"></div>
                                 </form>
                             </div>
                         </div>

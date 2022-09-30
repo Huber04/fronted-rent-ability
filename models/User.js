@@ -1,19 +1,17 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require ("../database/connectionDB");
 const User = sequelize.define('usuario', {
-   
     cedula: {
       type: DataTypes.STRING,
       primaryKey: true
     },
-    contraseña: {
+    password: {
         type: DataTypes.STRING,
         allowNull: false
     },
     nombre: {
       type: DataTypes.STRING,
       allowNull: false
-      
     },
     email: {
         type: DataTypes.STRING,
@@ -34,7 +32,6 @@ const User = sequelize.define('usuario', {
         type: DataTypes.STRING,
         allowNull: false
     }
-    
   }, {
    
   });

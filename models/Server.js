@@ -30,6 +30,7 @@ class Server {
             await sequelize.sync({force:false})
             console.log("Connect db full");
         } catch (error) {
+            console.log(error)
             console.log("Ocurrió un error");
         }
     }
