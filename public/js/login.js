@@ -28,7 +28,6 @@ buttonLogin.onclick = function(e) {
             localStorage.setItem('user', JSON.stringify(user.dataValues));
             window.location.href="/"
         } else {
-            messageError.dataset = ""
             messageError.innerHTML = response.message
         }
     });

@@ -1,6 +1,7 @@
 const express = require('express')
 const path =  require('path')
 const cors = require('cors')
+const hbs =require('hbs')
 const sequelize = require('../database/connectionDB')
 const fileUpload = require('express-fileupload');
 const authRouter = require('../routes/authRouter')
@@ -45,7 +46,9 @@ class Server {
             useTempFiles : true,
             tempFileDir : '/tmp/',
             createParentPath: true
+
         }));
+        hbs.registerPartials(path.join(__dirname, '../public', 'views', "partials"))
     }
 
     routes() {

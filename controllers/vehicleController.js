@@ -5,7 +5,11 @@ const Vehicle = require('../models/Vehicles');
 
 
 const getVehicles = async(rq = request, rs = response) => {
-    
+    const vehicles = await Vehicle.findAll()
+    return rs.json({
+        message: "ok", 
+        data: vehicles
+    })
 }
 
 const createVehicles = async(rq = request, rs = response) => {
@@ -15,7 +19,7 @@ const createVehicles = async(rq = request, rs = response) => {
     body.imagen = result.url
     body.id_publico_imagen = result.public_id
     await Vehicle.create(body);
-    rs.render('home');
+    return rs.status(200).send('<script>window.location.href="http://localhost:3000/create-vehicles"</script>');
 }
 
 const updateVehicles = async(rq = request, rs = response) => {
@@ -48,12 +52,8 @@ const updateVehicles = async(rq = request, rs = response) => {
 
 const getVehicleById = async(rq = request, rs = response) => {
     const id = rq.params.id;
-    const song = await Music.findById(id);
-    if (!song) {
-        return rs.status(404).json({song: []});
-    } else {
-        return rs.status(200).json({song: [song]});
-    }
+    rs.render("product")
+
 };
 
 
